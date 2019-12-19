@@ -11,7 +11,6 @@ import com.whatever.javabelt.models.ShowUser;
 import com.whatever.javabelt.models.User;
 import com.whatever.javabelt.repositories.ShowRepository;
 import com.whatever.javabelt.repositories.ShowUserRepository;
-import com.whatever.javabelt.repositories.UserRepository;
 import com.whatever.javabelt.services.ShowService;
 import com.whatever.javabelt.services.ShowUserService;
 import com.whatever.javabelt.services.UserService;
@@ -32,7 +31,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
-    private final UserRepository userRepository;
     private final UserService userService;
 	private final UserValidator userValidator;
 	private final ShowService showService;
@@ -42,7 +40,6 @@ public class MainController {
 
 
     public MainController(
-        UserRepository userRepository,
         UserService userService,
 		UserValidator userValidator, 
 		ShowService showService, 
@@ -50,7 +47,6 @@ public class MainController {
 		ShowUserRepository showUserRepository,
 		ShowUserService showUserService
     ) {
-        this.userRepository = userRepository;
         this.userService = userService;
 		this.userValidator = userValidator;
 		this.showService = showService;
