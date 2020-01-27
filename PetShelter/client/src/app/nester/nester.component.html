@@ -1,0 +1,13 @@
+<p>Title</p>
+<p>{{object.title}}</p>
+<p>Description</p>
+<p>{{object.description}}</p>
+<p>URL</p>
+<img src="{{object.url}}" alt="">
+<p>Reviews</p>
+<ng-container *ngFor="let x of object.ratings; let i = index">
+    <p>Rating: {{x.rating}}</p>
+    <p>Review: {{x.review}}</p>
+    <button (click)="deleteSecondaryObject(i)">Delete</button>
+</ng-container>
+<button (click)="closeSelf()">Close Me</button>

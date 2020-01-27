@@ -1,0 +1,17 @@
+<form (submit)="updateObject()">
+    <p>Title</p>
+    <ng-container *ngIf="errors.length">
+        <p *ngFor="let y of errors">{{y}}</p>
+    </ng-container>
+    <!-- <p *ngIf="formObject.title.length > 0 && formObject.title.length < 2">Invalid Title Length</p> -->
+    <input type="text" name="formObject.title" [(ngModel)]="formObject.title">
+    <p>Description</p>
+    <input type="text" name="formObject.description" [(ngModel)]="formObject.description">
+    <p>URL</p>
+    <input type="text" name="formObject.url" [(ngModel)]="formObject.url">
+    
+    <button type="submit">Submit</button>
+
+</form>
+
+

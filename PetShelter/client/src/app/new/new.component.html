@@ -1,0 +1,25 @@
+<form (submit)="createObject()">
+    <p>Title</p>
+    <ng-container *ngIf="errors.length">
+        <p *ngFor="let y of errors">{{y}}</p>
+    </ng-container>
+    <!-- <p *ngIf="formObject.title.length > 0 && formObject.title.length < 2">Invalid Title Length</p> -->
+    <input type="text" name="formObject.title" [(ngModel)]="formObject.title">
+    <p>Description</p>
+    <input type="text" name="formObject.description" [(ngModel)]="formObject.description">
+    <p>URL</p>
+    <input type="text" name="formObject.url" [(ngModel)]="formObject.url">
+    <p>Rating</p>
+    <select name="formObject.ratings[0].rating" [(ngModel)]="formObject.ratings[0].rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <p>Review</p>
+    <input type="text" name="formObject.ratings[0].review" [(ngModel)]="formObject.ratings[0].review">
+    <!-- <button type="submit" [disabled]="formObject.title.length < 2">Submit</button> -->
+    <button type="submit">Submit</button>
+
+</form>

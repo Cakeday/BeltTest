@@ -1,0 +1,18 @@
+html > component > service > routes > controller - db
+
+TODO :
+npm install -> do this where server.js is and inside the client folder
+models
+html / component
+
+--Back End--
+npm install express mongoose
+change models.js
+change mongoose connect db name in modelLoader.js
+
+--Front End--
+ng g c ___folder___name -> use to generate components
+make components you need, or rearrange + change field names in objects in HTML.
+change routing urls if you need to / validation
+
+you can copy your schema towards your component ts when making blank objects.

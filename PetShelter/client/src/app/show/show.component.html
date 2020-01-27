@@ -1,0 +1,28 @@
+<p>Title</p>
+<p>{{object.title}}</p>
+<p>Description</p>
+<p>{{object.description}}</p>
+<p>URL</p>
+<img src="{{object.url}}" alt="">
+<p>Reviews</p>
+<ng-container *ngFor="let x of object.ratings; let i = index">
+    <p>Rating: {{x.rating}}</p>
+    <p>Review: {{x.review}}</p>
+    <button (click)="deleteSecondaryObject(i)">Delete</button>
+</ng-container>
+
+
+<h1>Leave a review!</h1>
+<form>
+    <p>Rating</p>
+    <select name="secondary.rating" [(ngModel)]="secondary.rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <p>Review</p>
+    <input type="text" name="secondary.review" [(ngModel)]="secondary.review">
+    <button (click)="addSecondaryObject()">Add</button>
+</form>
