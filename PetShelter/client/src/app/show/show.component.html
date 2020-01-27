@@ -1,28 +1,13 @@
-<p>Title</p>
-<p>{{object.title}}</p>
-<p>Description</p>
-<p>{{object.description}}</p>
-<p>URL</p>
-<img src="{{object.url}}" alt="">
-<p>Reviews</p>
-<ng-container *ngFor="let x of object.ratings; let i = index">
-    <p>Rating: {{x.rating}}</p>
-    <p>Review: {{x.review}}</p>
-    <button (click)="deleteSecondaryObject(i)">Delete</button>
+<h3>Details about {{object.name}}</h3>
+<p><strong>Pet Type: </strong>{{object.type}}</p>
+<p><strong>Description: </strong>{{object.description}}</p>
+
+<p><strong>Skills:</strong></p>
+<ng-container *ngFor="let x of object.skills; let i = index">
+    <p>{{x.skill}}</p>
 </ng-container>
 
+<p><strong>Likes: </strong>{{object.likes}}</p>
 
-<h1>Leave a review!</h1>
-<form>
-    <p>Rating</p>
-    <select name="secondary.rating" [(ngModel)]="secondary.rating">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select>
-    <p>Review</p>
-    <input type="text" name="secondary.review" [(ngModel)]="secondary.review">
-    <button (click)="addSecondaryObject()">Add</button>
-</form>
+<button (click)="likePet()" [disabled]="bool">Like this pet!</button>
+<button (click)="adopt(object._id)">Adopt this Pet!</button>

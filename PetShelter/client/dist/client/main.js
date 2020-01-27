@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n<h1>Rotten Tomatoes</h1>\n<a [routerLink]=\"['/']\">Go Back</a>\n<button [routerLink]=\"['/new']\">Create New</button>\n\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<h1>Pet Shelter</h1>\n<a [routerLink]=\"['/']\">Go Back</a>\n<button [routerLink]=\"['/new']\">Create New</button>\n\n<router-outlet></router-outlet>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form (submit)=\"updateObject()\">\n    <p>Title</p>\n    <ng-container *ngIf=\"errors.length\">\n        <p *ngFor=\"let y of errors\">{{y}}</p>\n    </ng-container>\n    <!-- <p *ngIf=\"formObject.title.length > 0 && formObject.title.length < 2\">Invalid Title Length</p> -->\n    <input type=\"text\" name=\"formObject.title\" [(ngModel)]=\"formObject.title\">\n    <p>Description</p>\n    <input type=\"text\" name=\"formObject.description\" [(ngModel)]=\"formObject.description\">\n    <p>URL</p>\n    <input type=\"text\" name=\"formObject.url\" [(ngModel)]=\"formObject.url\">\n    \n    <button type=\"submit\">Submit</button>\n\n</form>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n<form (submit)=\"updateObject()\">\n    <ng-container *ngIf=\"errors.length\">\n        <p *ngFor=\"let y of errors\">{{y}}</p>\n    </ng-container>\n\n\n    <p>Name</p>\n    <input type=\"text\" name=\"formObject.name\" [(ngModel)]=\"formObject.name\">\n\n    <p>Type</p>\n    <input type=\"text\" name=\"formObject.type\" [(ngModel)]=\"formObject.type\">\n\n    <p>Description</p>\n    <input type=\"text\" name=\"formObject.description\" [(ngModel)]=\"formObject.description\">\n\n\n    <p>Skills</p>\n    Skill 1: <input type=\"text\" name=\"formObject.skills[0].skill\" [(ngModel)]=\"formObject.skills[0].skill\">\n    Skill 2: <input type=\"text\" name=\"formObject.skills[1].skill\" [(ngModel)]=\"formObject.skills[1].skill\">\n    Skill 3: <input type=\"text\" name=\"formObject.skills[2].skill\" [(ngModel)]=\"formObject.skills[2].skill\">\n    \n    <button type=\"submit\">Submit</button>\n\n</form>\n\n\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<table>\n    <thead>\n        <th>Title</th>\n        <th>Description</th>\n        <th>URL</th>\n        <th>Actions</th>\n    </thead>\n    <tbody>\n        <tr *ngFor=\"let x of objects\">\n            <td>{{x.title}}</td>\n            <td>{{x.description}}</td>\n            <td><img src=\"{{x.url}}\" alt=\"\" (click)=\"selectNester(x)\"></td>\n            <td>\n                <button [routerLink]=\"['/read', x._id]\">View</button> |\n                <button [routerLink]=\"['/edit', x._id]\">Edit</button> |\n                <button (click)=\"deleteObject(x._id)\">Delete</button>\n            </td>\n        </tr>\n    </tbody>\n</table>\n\n************************\n<ng-container *ngIf=\"nester\">\n    <Nester [object]=\"nester\" [parent]=\"self\"></Nester>\n</ng-container>");
+/* harmony default export */ __webpack_exports__["default"] = ("<table>\n    <thead>\n        <th>Name</th>\n        <th>Type</th>\n        <th>Description</th>\n        <th>Actions</th>\n    </thead>\n    <tr *ngFor=\"let x of objects\">\n        <td>{{x.name}}</td>\n        <td>{{x.type}}</td>\n        <td>{{x.description}}</td>\n        <!-- <td><img src=\"{{x.url}}\" alt=\"\" (click)=\"selectNester(x)\"></td> -->\n        <td>\n            <button [routerLink]=\"['/read', x._id]\">View</button> |\n            <button [routerLink]=\"['/edit', x._id]\">Edit</button> |\n            <button (click)=\"deleteObject(x._id)\">Delete</button>\n        </td>\n    </tr>\n</table>\n");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form (submit)=\"createObject()\">\n    <p>Title</p>\n    <ng-container *ngIf=\"errors.length\">\n        <p *ngFor=\"let y of errors\">{{y}}</p>\n    </ng-container>\n    <!-- <p *ngIf=\"formObject.title.length > 0 && formObject.title.length < 2\">Invalid Title Length</p> -->\n    <input type=\"text\" name=\"formObject.title\" [(ngModel)]=\"formObject.title\">\n    <p>Description</p>\n    <input type=\"text\" name=\"formObject.description\" [(ngModel)]=\"formObject.description\">\n    <p>URL</p>\n    <input type=\"text\" name=\"formObject.url\" [(ngModel)]=\"formObject.url\">\n    <p>Rating</p>\n    <select name=\"formObject.ratings[0].rating\" [(ngModel)]=\"formObject.ratings[0].rating\">\n        <option value=\"1\">1</option>\n        <option value=\"2\">2</option>\n        <option value=\"3\">3</option>\n        <option value=\"4\">4</option>\n        <option value=\"5\">5</option>\n    </select>\n    <p>Review</p>\n    <input type=\"text\" name=\"formObject.ratings[0].review\" [(ngModel)]=\"formObject.ratings[0].review\">\n    <!-- <button type=\"submit\" [disabled]=\"formObject.title.length < 2\">Submit</button> -->\n    <button type=\"submit\">Submit</button>\n\n</form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<form (submit)=\"createObject()\">\n    <ng-container *ngIf=\"errors.length\">\n        <p *ngFor=\"let y of errors\">{{y}}</p>\n    </ng-container>\n    <!-- <p *ngIf=\"formObject.title.length > 0 && formObject.title.length < 2\">Invalid Title Length</p> -->\n    \n    \n    <p>Name</p>\n    <input type=\"text\" name=\"formObject.name\" [(ngModel)]=\"formObject.name\">\n\n    <p>Type</p>\n    <input type=\"text\" name=\"formObject.type\" [(ngModel)]=\"formObject.type\">\n\n    <p>Description</p>\n    <input type=\"text\" name=\"formObject.description\" [(ngModel)]=\"formObject.description\">\n\n    <hr>\n\n\n    <p>Skills</p>\n    Skill 1: <input type=\"text\" name=\"formObject.skills[0].skill\" [(ngModel)]=\"formObject.skills[0].skill\">\n    Skill 2: <input type=\"text\" name=\"formObject.skills[1].skill\" [(ngModel)]=\"formObject.skills[1].skill\">\n    Skill 3: <input type=\"text\" name=\"formObject.skills[2].skill\" [(ngModel)]=\"formObject.skills[2].skill\">\n    <!-- <button type=\"submit\" [disabled]=\"formObject.title.length < 2\">Submit</button> -->\n    <button type=\"submit\">Submit</button>\n\n</form>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>Title</p>\n<p>{{object.title}}</p>\n<p>Description</p>\n<p>{{object.description}}</p>\n<p>URL</p>\n<img src=\"{{object.url}}\" alt=\"\">\n<p>Reviews</p>\n<ng-container *ngFor=\"let x of object.ratings; let i = index\">\n    <p>Rating: {{x.rating}}</p>\n    <p>Review: {{x.review}}</p>\n    <button (click)=\"deleteSecondaryObject(i)\">Delete</button>\n</ng-container>\n\n\n<h1>Leave a review!</h1>\n<form>\n    <p>Rating</p>\n    <select name=\"secondary.rating\" [(ngModel)]=\"secondary.rating\">\n        <option value=\"1\">1</option>\n        <option value=\"2\">2</option>\n        <option value=\"3\">3</option>\n        <option value=\"4\">4</option>\n        <option value=\"5\">5</option>\n    </select>\n    <p>Review</p>\n    <input type=\"text\" name=\"secondary.review\" [(ngModel)]=\"secondary.review\">\n    <button (click)=\"addSecondaryObject()\">Add</button>\n</form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Details about {{object.name}}</h3>\n<p><strong>Pet Type: </strong>{{object.type}}</p>\n<p><strong>Description: </strong>{{object.description}}</p>\n\n<p><strong>Skills:</strong></p>\n<ng-container *ngFor=\"let x of object.skills; let i = index\">\n    <p>{{x.skill}}</p>\n</ng-container>\n\n<p><strong>Likes: </strong>{{object.likes}}</p>\n\n<button (click)=\"likePet()\" [disabled]=\"bool\">Like this pet!</button>\n<button (click)=\"adopt(object._id)\">Adopt this Pet!</button>");
 
 /***/ }),
 
@@ -518,13 +518,15 @@ let EditComponent = class EditComponent {
         this.route = route;
         this.service = service;
         this.formObject = {
-            title: "",
+            name: "",
+            type: "",
             description: "",
-            url: "",
-            ratings: [{
-                    rating: 1,
-                    review: ""
-                }]
+            likes: 0,
+            skills: [
+                { skill: "" },
+                { skill: "" },
+                { skill: "" },
+            ]
         };
         this.errors = [];
     }
@@ -815,13 +817,15 @@ let NewComponent = class NewComponent {
         this.route = route;
         this.service = service;
         this.formObject = {
-            title: "",
+            name: "",
+            type: "",
             description: "",
-            url: "",
-            ratings: [{
-                    rating: 1,
-                    review: ""
-                }]
+            likes: 0,
+            skills: [
+                { skill: "" },
+                { skill: "" },
+                { skill: "" },
+            ]
         };
         this.errorMsg = "";
         this.errors = [];
@@ -839,6 +843,7 @@ let NewComponent = class NewComponent {
                     this.errors.push(data['errors'][field]['message']);
                 }
                 // this.errorMsg = data['error']
+                console.log(this.errors);
                 return;
             }
             this.router.navigate(['/']);
@@ -899,18 +904,21 @@ let ShowComponent = class ShowComponent {
         this.route = route;
         this.service = service;
         this.object = {
-            title: "",
+            name: "",
+            type: "",
             description: "",
-            url: "",
-            ratings: [{
-                    rating: 1,
-                    review: ""
-                }]
+            likes: 0,
+            skills: [
+                { skill: "" },
+                { skill: "" },
+                { skill: "" },
+            ]
         };
         this.secondary = { rating: 1, review: "" };
     }
     ngOnInit() {
         this.getObject();
+        this.bool = false;
     }
     getObject() {
         let id = this.route.snapshot.params.id;
@@ -919,21 +927,19 @@ let ShowComponent = class ShowComponent {
             this.object = data;
         });
     }
-    updateObject() {
+    likePet() {
+        this.bool = true;
+        this.object.likes += 1;
         let o = this.service.updateOne(this.object);
         o.subscribe(data => {
-            console.log(data);
-            // validations go here
-            this.secondary = { rating: 1, review: "" };
+            this.getObject();
         });
     }
-    addSecondaryObject() {
-        this.object.ratings.push(this.secondary);
-        this.updateObject();
-    }
-    deleteSecondaryObject(i) {
-        this.object.ratings.splice(i, 1);
-        this.updateObject();
+    adopt(id) {
+        let o = this.service.deleteOne(id);
+        o.subscribe(data => {
+            this.router.navigate(['/']);
+        });
     }
 };
 ShowComponent.ctorParameters = () => [
@@ -1018,7 +1024,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/CalebReyes/Desktop/Coding/MeanStack/Angular/meanPlate/client/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/CalebReyes/Desktop/Coding/BeltTest/PetShelter/client/src/main.ts */"./src/main.ts");
 
 
 /***/ })

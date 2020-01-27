@@ -9,18 +9,21 @@ import { HttpService } from '../http.service';
 })
 export class NewComponent implements OnInit {
   formObject = {
-    title: "",
+    name: "",
+    type: "",
     description: "",
-    url: "",
-    ratings: [{
-      rating: 1,
-      review: ""
-    }]
+    likes: 0,
+    skills: [
+      {skill: ""},
+      {skill: ""},
+      {skill: ""},
+    ]
   }
+
   errorMsg = "";
   errors = [];
+  bool = true;
 
-  bool = true
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -40,6 +43,7 @@ export class NewComponent implements OnInit {
           this.errors.push(data['errors'][field]['message'])
         }
         // this.errorMsg = data['error']
+        console.log(this.errors);
         return;
       }
       this.router.navigate(['/'])

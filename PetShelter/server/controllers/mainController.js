@@ -3,7 +3,7 @@ const PrimaryObject = mongoose.model('PrimaryObject')
 
 module.exports = {
     find: (req, res) => {
-        PrimaryObject.find()
+        PrimaryObject.find().sort('type')
             .then(data => res.json(data))
             .catch(error =>res.json(error))
     },

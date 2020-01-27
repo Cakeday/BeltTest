@@ -9,14 +9,18 @@ import { HttpService } from '../http.service';
 })
 export class ShowComponent implements OnInit {
   object:any = {
-    title: "",
+    name: "",
+    type: "",
     description: "",
-    url: "",
-    ratings: [{
-      rating: 1,
-      review: ""
-    }]
+    likes: 0,
+    skills: [
+      {skill: ""},
+      {skill: ""},
+      {skill: ""},
+    ]
   }
+
+  bool: Boolean;
 
   secondary:any = {rating:1, review:""}
 
@@ -27,7 +31,8 @@ export class ShowComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getObject()
+    this.getObject();
+    this.bool = false;
   }
 
   getObject() {
@@ -37,25 +42,29 @@ export class ShowComponent implements OnInit {
       this.object = data;
     })
   }
-  
-  updateObject() {
+
+
+
+
+  likePet() {
+    this.bool = true;
+    this.object.likes += 1;
     let o = this.service.updateOne(this.object);
     o.subscribe(data => {
-      console.log(data)
-      // validations go here
-      this.secondary = {rating:1, review:""}
+      this.getObject()
     })
   }
 
-  addSecondaryObject() {
-    this.object.ratings.push(this.secondary)
-    this.updateObject()
+
+  adopt(id) {
+    let o = this.service.deleteOne(id);
+    o.subscribe(data => {
+      this.router.navigate(['/'])
+    })
   }
 
-  
 
-  deleteSecondaryObject(i) {
-    this.object.ratings.splice(i,1)
-    this.updateObject()
-  }
+
+
+
 }

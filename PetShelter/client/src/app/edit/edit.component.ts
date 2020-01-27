@@ -9,13 +9,15 @@ import { HttpService } from '../http.service';
 })
 export class EditComponent implements OnInit {
   formObject: any = {
-    title: "",
+    name: "",
+    type: "",
     description: "",
-    url: "",
-    ratings: [{
-      rating: 1,
-      review: ""
-    }]
+    likes: 0,
+    skills: [
+      {skill: ""},
+      {skill: ""},
+      {skill: ""},
+    ]
   }
   errors = [];
 

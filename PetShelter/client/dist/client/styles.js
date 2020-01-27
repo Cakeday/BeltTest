@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/CalebReyes/Desktop/Coding/MeanStack/Angular/meanPlate/client/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/CalebReyes/Desktop/Coding/BeltTest/PetShelter/client/src/styles.css */"./src/styles.css");
 
 
 /***/ })
